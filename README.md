@@ -26,10 +26,11 @@ conda activate multi2Human
 ```
 
 ### Dataset Preparation
-Our model was trained on the [DeepFashion-MultiModal](https://github.com/yumingj/DeepFashion-MultiModal) dataset. [Click here](https://github.com/yumingj/DeepFashion-MultiModal) to download the processed dataset.
+Our model was trained on the [DeepFashion-MultiModal](https://github.com/yumingj/DeepFashion-MultiModal) dataset. 
+[Click here](https://github.com/yumingj/DeepFashion-MultiModal) to download the processed dataset.
 
 ### Pre-Trained Models
-Pre-trained models can be found [here](https://github.com/yumingj/DeepFashion-MultiModal).
+[Click here](https://github.com/yumingj/DeepFashion-MultiModal) to download the pre-trained models, including logs, pretrained_models, and pretrained_clip_model. Place these downloaded models into the project directory. 
 
 ## Implementation
 
@@ -39,7 +40,7 @@ python3 train_vqgan.py --dataset Deepfashion --log_dir vqgan_fashion --batch_siz
 ```
 ### Testing StageI
 ```
-python test.py --dataset DeepfashionT --ae_load_step 900000 --ae_load_dir vqgan_fashion --sampler absorbing --batch_size 1   --ema --amp
+python test_vqgan.py --dataset DeepfashionT --ae_load_step 900000 --ae_load_dir vqgan_fashion --sampler absorbing --batch_size 1   --ema --amp
 ```
 The reconstruction results will be saved to the directory `logs/vqgan_fashion`. This includes all logs, model checkpoints and saved outputs.
 
