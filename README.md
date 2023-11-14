@@ -28,29 +28,32 @@ conda activate multi2Human
 ### Dataset Preparation
 Our model was trained on the [DeepFashion-MultiModal](https://github.com/yumingj/DeepFashion-MultiModal) dataset. 
 
-[Click here](https://github.com/yumingj/DeepFashion-MultiModal) to download the processed dataset directory named "deepfashion_data". Place the directory into the project directory. 
+[Click here](https://github.com/yumingj/DeepFashion-MultiModal) to download the processed dataset directory named "deepfashion_data". Put the directory into the project directory. 
 
 ### Pre-Trained Models
-[Click here](https://github.com/yumingj/DeepFashion-MultiModal) to download the pre-trained models, including "logs", "pretrained_models", and "pretrained_clip_model". Place these downloaded directorys into the project directory. 
+[Click here](https://github.com/yumingj/DeepFashion-MultiModal) to download the pre-trained models, including "logs", "pretrained_models", and "pretrained_clip_model". Put these downloaded directories into the project directory. 
 
 ## Implementation
 
-### Training StageI (A variant of VQGAN model called WAVE.)
+### Training StageI (Training a variant of VQGAN model called WAVE.)
 ```
 python3 train_vqgan.py --dataset Deepfashion --log_dir vqgan_fashion --batch_size 4 --amp --ema 
 ```
-### Testing StageI
+### Testing StageI (Reconstructing the human images.)
 ```
 python test_vqgan.py --dataset DeepfashionT --ae_load_step 900000 --ae_load_dir vqgan_fashion --sampler absorbing --batch_size 1   --ema --amp
 ```
 The reconstruction results will be saved to the directory `logs/vqgan_fashion`. This includes all logs, model checkpoints and saved outputs.
 
-### Training StageII (A variant of VQ-Diffusion model called MCDM.)
+### Training StageII (Training a variant of VQ-Diffusion model called MCDM.)
 ```
 python3 train_stage2.py --sampler absorbing --dataset Deepfashion --log_dir absorbing_fashion --ae_load_dir vqgan_fashion --ae_load_step 900000 --amp --ema --batch_size 4
 ```
-### Sampling StageII
+### Sampling StageII (Generating high-quality and diverse human images.)
 ```
 python3 test_stage2.py --sampler absorbing --dataset DeepfashionT --log_dir absorbing_fashion --ae_load_dir vqgan_fashion --ae_load_step 900000 --amp --load_dir absorbing_fashion --load_step 250000 --ema --batch_size 1
 ```
 The final results will be saved to the directory `logs/absorbing_fashion`. This includes all logs, model checkpoints and saved outputs.
+
+## Acknowledgments
+Part of the code is borrowed from [taming-transformers](https://github.com/CompVis/taming-transformers), [unleashing-transformers](https://github.com/samb-t/unleashing-transformers), and [VQ-Diffusion](https://github.com/cientgu/VQ-Diffusion).
