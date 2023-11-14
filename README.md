@@ -25,7 +25,7 @@ conda create --name multi2Human --file requirements.yml
 conda activate multi2Human
 ```
 
-### Dataset Setup
+### Dataset Preparation
 [Click here!](https://github.com/yumingj/Text2Human#1-dataset-preparation)
 
 ### Pre-Trained Models
@@ -37,12 +37,12 @@ Pre-trained models can be found [here](xxxx).
 ```
 python3 train_vqgan.py --dataset Deepfashion --log_dir vqgan_fashion --batch_size 4 --amp --ema 
 ```
-As specified with the `--log_dir` flag, results will be saved to the directory `logs/vqgan_fashion`. This includes all logs, model checkpoints and saved outputs.
-
 ### Testing StageI
 ```
 python test.py --dataset DeepfashionT --ae_load_step 900000 --ae_load_dir vqgan_fashion --sampler absorbing --batch_size 1   --ema --amp
 ```
+The reconstruction results will be saved to the directory `logs/vqgan_fashion`. This includes all logs, model checkpoints and saved outputs.
+
 ### Training StageII (A variant of VQ-Diffusion model called MCDM.)
 ```
 python3 train_stage2.py --sampler absorbing --dataset Deepfashion --log_dir absorbing_fashion --ae_load_dir vqgan_fashion --ae_load_step 900000 --amp --ema --batch_size 4
@@ -51,3 +51,5 @@ python3 train_stage2.py --sampler absorbing --dataset Deepfashion --log_dir abso
 ```
 python3 test_stage2.py --sampler absorbing --dataset DeepfashionT --log_dir absorbing_fashion --ae_load_dir vqgan_fashion --ae_load_step 900000 --amp --load_dir absorbing_fashion --load_step 250000 --ema --batch_size 1
 ```
+The final results will be saved to the directory `logs/absorbing_fashion`. This includes all logs, model checkpoints and saved outputs.
+
