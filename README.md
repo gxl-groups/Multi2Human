@@ -25,10 +25,11 @@ conda create --name multi2Human --file requirements.yml
 conda activate multi2Human
 ```
 
-### Dataset & Pre-Trained Models Preparation
-[Click here!](https://github.com/yumingj/Text2Human#1-dataset-preparation)
+### Dataset Preparation
+Our model was trained on the [DeepFashion-MultiModal](https://github.com/yumingj/DeepFashion-MultiModal) dataset. [Click here](https://github.com/yumingj/DeepFashion-MultiModal) to download the processed dataset.
 
-Pre-trained models can be found [here](xxxx).
+### Pre-Trained Models
+Pre-trained models can be found [here](https://github.com/yumingj/DeepFashion-MultiModal).
 
 ## Implementation
 
