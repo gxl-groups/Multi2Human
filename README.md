@@ -1,6 +1,7 @@
 # Multi2Human
 This is the code of Multi2Human: Controllable Human Image Generation with Multimodal Controls(Coming soon！)
 This repository provides the official PyTorch implementation for the following paper:
+
 **Multi2Human: Controllable Human Image Generation with Multimodal Controls**</br>
 
 ![front_page_sample](assets/sampleteaser.png)
