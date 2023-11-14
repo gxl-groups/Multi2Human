@@ -61,7 +61,7 @@ class ParsingModel():
 
     def load_pretrained_segm_vae(self):
         # load pretrained vqgan for segmentation mask
-        segm_ae_checkpoint = torch.load('/home/user/wz/a_new_project/Text2Human-main/pretrained_models/parsing_token.pth')
+        segm_ae_checkpoint = torch.load('/home/user/wz/second_project/Multi2Human/pretrained_models/parsing_token.pth')
         self.segm_encoder.load_state_dict(
             segm_ae_checkpoint['encoder'], strict=True)
         self.segm_quantizer.load_state_dict(
