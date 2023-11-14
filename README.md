@@ -25,10 +25,9 @@ conda create --name multi2Human --file requirements.yml
 conda activate multi2Human
 ```
 
-### Dataset Preparation
+### Dataset & Pre-Trained Models Preparation
 [Click here!](https://github.com/yumingj/Text2Human#1-dataset-preparation)
 
-### Pre-Trained Models
 Pre-trained models can be found [here](xxxx).
 
 ## Implementation
