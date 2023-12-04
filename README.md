@@ -28,10 +28,10 @@ conda activate multi2Human
 ### Dataset Preparation
 Our model was trained on the [DeepFashion-MultiModal](https://github.com/yumingj/DeepFashion-MultiModal) dataset. 
 
-[Click here](https://drive.google.com/drive/u/0/folders/1KCHA_Ga-eE8mpt4m6MQAi7wWFO5yiL-r) to download the processed dataset directory named "deepfashion_data". Put the directory into the project directory. 
+[Click here](https://drive.google.com/drive/folders/1KCHA_Ga-eE8mpt4m6MQAi7wWFO5yiL-r?usp=drive_link) to download the processed dataset directory named "deepfashion_data". Put the directory into the project directory. 
 
 ### Pre-Trained Models
-[Click here](https://drive.google.com/drive/u/0/folders/1KCHA_Ga-eE8mpt4m6MQAi7wWFO5yiL-r) to download the pre-trained models, including "logs", "pretrained_models", and "pretrained_clip_model". Put these downloaded directories into the project directory. 
+[Click here](https://drive.google.com/drive/folders/1KCHA_Ga-eE8mpt4m6MQAi7wWFO5yiL-r?usp=drive_link) to download the pre-trained models, including "logs", "pretrained_models", and "pretrained_clip_model". Put these downloaded directories into the project directory. 
 
 ## Implementation
 
